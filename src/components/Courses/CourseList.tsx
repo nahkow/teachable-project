@@ -9,7 +9,6 @@ const CourseList = ({ courses }: { courses: Course[] }) => {
   const router = useRouter();
 
   const navigateToCourse = (id: number) => {
-    console.log("clicked");
     router.push(`/courses/${id}`);
   };
 

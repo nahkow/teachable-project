@@ -10,7 +10,6 @@ const useCourses = () => {
     fetch('/api/courses')
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
         setCourses(data.courses)
       })
   }, [])

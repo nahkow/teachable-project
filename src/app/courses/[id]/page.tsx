@@ -15,7 +15,6 @@ const CourseEnrollment = () => {
   useEffect(() => {
     getStudentsEnrolledByCourseId(params.id as string).then((res) => {
       setStudentsEnrolled(res)
-      console.log(res)
     }
     );
   }, [params.id]);

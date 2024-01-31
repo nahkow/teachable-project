@@ -7,7 +7,6 @@ const useStudents = () => {
   const getStudentsEnrolledByCourseId = async (
     id: string
   ): Promise<Student[]> => {
-    console.log(`/api/courses/enrollments/?course_id='${id}`);
     const res = await fetch(`/api/courses/enrollments/?course_id=${id}`).then(
       (res) => res.json()
     );

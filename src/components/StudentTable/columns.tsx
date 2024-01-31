@@ -17,7 +17,6 @@ export const columns: ColumnDef<Student>[] = [
     enableSorting: true,
     enableHiding: false,
     filterFn: (row, id, value) => {
-      console.log(id, value)
       return JSON.stringify(row.getValue("name")).toLowerCase().includes(value.toLowerCase());
     },
   }, 
@@ -27,7 +26,6 @@ export const columns: ColumnDef<Student>[] = [
       <DataTableColumnHeader column={column} title="Email" />
     ),
     cell: ({ row }) => {
-      console.log(row.getValue("email"))
     return (<div className="w-[80px]">{row.getValue("email")}</div>)},
     enableSorting: true,
     enableHiding: false,

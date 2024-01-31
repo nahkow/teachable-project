@@ -19,7 +19,6 @@ const DataTableToolbar = function <TData>({ table }: DataTableToolbarProps<TData
           placeholder="Search..."
           value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>{
-            console.log(event.target.value)
             table.getColumn("name")?.setFilterValue(event.target.value)
           }
           }

@@ -1,12 +1,14 @@
 "use client";
+
 import useMediaQuery from "@/hooks/useMediaQuery";
 import CourseCard from "@/components/Courses/CourseCard";
-import { Course } from "@/types/schemas/course-schema";
 import { useRouter } from "next/navigation";
+import useCourses from "@/hooks/useGetCourses";
 
-const CourseList = ({ courses }: { courses: Course[] }) => {
-  const isDesktopOrTablet = useMediaQuery("all and (min-width: 768px)");
+const CourseList = () => {
+  const {courses} = useCourses();
   const router = useRouter();
+  const isDesktopOrTablet = useMediaQuery("all and (min-width: 768px)");
 
   const navigateToCourse = (id: number) => {
     router.push(`/courses/${id}`);

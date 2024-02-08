@@ -6,10 +6,10 @@ const createPath = (courseId: string) =>
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const id = searchParams.get("course_id");
-  const res = await fetch(createPath(id), {
+  const res = await fetch(createPath(id || ""), {
     headers: {
       "Content-Type": "application/json",
-      apiKey: process.env.DATA_API_KEY,
+      apiKey: process.env.DATA_API_KEY || "",
     },
   });
   const data = await res.json();

@@ -1,12 +1,15 @@
 "use client";
+
 import useMediaQuery from "@/hooks/useMediaQuery";
 import CourseCard from "@/components/Courses/CourseCard";
-import { Course } from "@/types/schemas/course-schema";
 import { useRouter } from "next/navigation";
+import useCourses from "@/hooks/useGetCourses";
+import { Course } from "@/types/schemas/course-schema";
 
-const CourseList = ({ courses }: { courses: Course[] }) => {
-  const isDesktopOrTablet = useMediaQuery("all and (min-width: 768px)");
+const CourseList = () => {
+  const {courses} = useCourses();
   const router = useRouter();
+  const isDesktopOrTablet = useMediaQuery("all and (min-width: 768px)");
 
   const navigateToCourse = (id: number) => {
     router.push(`/courses/${id}`);
@@ -18,7 +21,7 @@ const CourseList = ({ courses }: { courses: Course[] }) => {
 
   return (
     <div className="flex flex-col gap-2">
-      {courses.map((course) => (
+      {courses.map((course: Course) => (
         <CourseCard
           key={course.id}
           course={course}

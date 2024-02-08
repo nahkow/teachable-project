@@ -1,11 +1,11 @@
 "use client";
 
 import StudentTable from "@/components/StudentTable";
-import { Button } from "@/components/ui/button";
 import useStudents from "@/hooks/useStudents";
 import { Student } from "@/types/schemas/student-schema";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import CourseHeader from "./CourseHeader";
 
 const CourseEnrollment = () => {
   const params = useParams();
@@ -21,6 +21,7 @@ const CourseEnrollment = () => {
 
   return (  
     <>
+      {/* <CourseHeader id={params.id} /> */}
       <StudentTable data={studentsEnrolled}/>
     </>
   );

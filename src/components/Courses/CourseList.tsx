@@ -3,7 +3,7 @@
 import useMediaQuery from "@/hooks/useMediaQuery";
 import CourseCard from "@/components/Courses/CourseCard";
 import { useRouter } from "next/navigation";
-import useCourses from "@/hooks/useGetCourses";
+import useCourses from "@/hooks/useCourses";
 import { Course } from "@/types/schemas/course-schema";
 
 const CourseList = () => {

@@ -4,6 +4,7 @@ import useMediaQuery from "@/hooks/useMediaQuery";
 import CourseCard from "@/components/Courses/CourseCard";
 import { useRouter } from "next/navigation";
 import useCourses from "@/hooks/useGetCourses";
+import { Course } from "@/types/schemas/course-schema";
 
 const CourseList = () => {
   const {courses} = useCourses();
@@ -20,7 +21,7 @@ const CourseList = () => {
 
   return (
     <div className="flex flex-col gap-2">
-      {courses.map((course) => (
+      {courses.map((course: Course) => (
         <CourseCard
           key={course.id}
           course={course}
